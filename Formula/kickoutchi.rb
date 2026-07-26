@@ -1,25 +1,25 @@
 class Kickoutchi < Formula
   desc "A clean TUI and CLI port janitor: see which process owns each open local port and kick it out safely"
   homepage "https://kickoutchi.com"
-  version "1.3.0"
+  version "1.3.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.0/kickoutchi-aarch64-apple-darwin.tar.xz"
-      sha256 "6f991f16a8a74a96a6ffd2796004899d6ea994987c40b25436f9672a95e82886"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.1/kickoutchi-aarch64-apple-darwin.tar.xz"
+      sha256 "c2ba11b0d16f5519dc7505accf324abca3879ee0695b814d849ed3b3bfd4110d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.0/kickoutchi-x86_64-apple-darwin.tar.xz"
-      sha256 "2cdf79e685501a5fc7b62ead5ea51b8b42868d819a4843dfadfcd02e9fedb96a"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.1/kickoutchi-x86_64-apple-darwin.tar.xz"
+      sha256 "ecbd3b48c2902b1a8384337dc940e8953170d4f8b66436cbf672d736a5a1ca4c"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.0/kickoutchi-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "6716cf6d607cc20b2d1d3d79793ea1211a8f804bebba4bbcab0a2549aeff8739"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.1/kickoutchi-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "33d28ae68e8579b949bdcc53e64199eedf9b31665f698550dc0be5fc6466944d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.0/kickoutchi-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6361a1b9cdfce10c0c32ef495b350bbadeea8febd8955f708c115eee120098d8"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.1/kickoutchi-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "20adfad255d493e810a7feeac4983721799effd6f2ed03cfa5b31a391cbdc621"
     end
   end
   license "MIT"
@@ -54,6 +54,8 @@ class Kickoutchi < Formula
     bin.install "kick", "kickoutchi" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
+
+    (pkgshare/"install-provenance").write("homebrew\n")
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
