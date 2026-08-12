@@ -1,36 +1,36 @@
 class Kickoutchi < Formula
   desc "A clean TUI and CLI port janitor: see which process owns each open local port and kick it out safely"
   homepage "https://kickoutchi.com"
-  version "1.3.10"
+  version "1.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.10/kickoutchi-aarch64-apple-darwin.tar.xz"
-      sha256 "15d0347b5a947c4d42ce32b0f8b5b833c58a024464cae11f3703939b911755a8"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.4.0/kickoutchi-aarch64-apple-darwin.tar.xz"
+      sha256 "163cfdac33d4d139c50d9965415c4da0680533dd90f46d6974619ae52c82b08f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.10/kickoutchi-x86_64-apple-darwin.tar.xz"
-      sha256 "34070e4d78a7b5e70a352629efaacafbc5bd1f85fddddd1daaf3218a601ede83"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.4.0/kickoutchi-x86_64-apple-darwin.tar.xz"
+      sha256 "0c1d4ac935600cc03583a1d952b43c9dcefd941eebff34692e1f43f0dee10b22"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.10/kickoutchi-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e0a4d9fd0e85dd55212082bfc444e1837b7c391e8e7a14b5fa6879fd07b384b0"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.4.0/kickoutchi-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "335d4f8d7d170799b0d36337f5727d8a1a67c5326342983702c7813c292df528"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.3.10/kickoutchi-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4a9299b7e93beb5f2fc723135046e410104705d1beb52c9714f0ffe1976c426d"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.4.0/kickoutchi-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4049b9de5996d5a5db5e4e6c24e80178c683e205bb91be260875e2160a81f20f"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
+    "aarch64-apple-darwin": {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
-  }.freeze
+    "x86_64-apple-darwin": {},
+    "x86_64-pc-windows-gnu": {},
+    "x86_64-unknown-linux-gnu": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -48,10 +48,18 @@ class Kickoutchi < Formula
   end
 
   def install
-    bin.install "kick", "kickoutchi" if OS.mac? && Hardware::CPU.arm?
-    bin.install "kick", "kickoutchi" if OS.mac? && Hardware::CPU.intel?
-    bin.install "kick", "kickoutchi" if OS.linux? && Hardware::CPU.arm?
-    bin.install "kick", "kickoutchi" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "kick", "kickoutchi"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "kick", "kickoutchi"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "kick", "kickoutchi"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "kick", "kickoutchi"
+    end
 
     install_binary_aliases!
 
