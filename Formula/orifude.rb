@@ -1,18 +1,18 @@
 class Orifude < Formula
   desc "A quiet, offline folding and ink puzzle game for the terminal"
   homepage "https://orifude.com"
-  version "1.1.0"
+  version "1.1.1"
   license "Apache-2.0"
   depends_on macos: :ventura
 
   on_macos do
     on_intel do
-      url "https://github.com/nuggocto/orifude/releases/download/v1.1.0/orifude-1.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "af2a320434bcbcc9ce57f7c57851bd455fa730cb79a768d116a7f8052bcdd980"
+      url "https://github.com/nuggocto/orifude/releases/download/v1.1.1/orifude-1.1.1-x86_64-apple-darwin.tar.gz"
+      sha256 "a2afc2ce7723c375ae6b3b160ec08451c86b5493a02d9d352cdf68d52677d8c9"
     end
     on_arm do
-      url "https://github.com/nuggocto/orifude/releases/download/v1.1.0/orifude-1.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "d43ed81501d0ce85bc26bff98336fbfd988b96cdff2222c03f187d3d879854af"
+      url "https://github.com/nuggocto/orifude/releases/download/v1.1.1/orifude-1.1.1-aarch64-apple-darwin.tar.gz"
+      sha256 "68097286f7ee91ae689663a97f503d43e9c933f8e77c9b5d73b765503ef08cd1"
     end
   end
 
