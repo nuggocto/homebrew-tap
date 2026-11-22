@@ -23,7 +23,10 @@ brew install nuggocto/tap/kickoutchi
 | `orifude` | https://github.com/nuggocto/orifude |
 
 Install Orifude on macOS with `brew install nuggocto/tap/orifude`. Its
-[website](https://orifude.com) has release notes and the other installation methods.
+[README](https://github.com/nuggocto/orifude#start-playing) lists the other
+installation methods, and its
+[changelog](https://github.com/nuggocto/orifude/blob/shrek/CHANGELOG.md) has the
+release notes.
 
 More formulae can be added under `Formula/*.rb` as other projects publish
 Homebrew releases.
