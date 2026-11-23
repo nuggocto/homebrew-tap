@@ -1,25 +1,25 @@
 class Kickoutchi < Formula
   desc "A clean TUI and CLI port janitor: see which process owns each open local port and kick it out safely"
   homepage "https://kickoutchi.com"
-  version "1.7.1"
+  version "1.7.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.7.1/kickoutchi-aarch64-apple-darwin.tar.xz"
-      sha256 "1a55dd2286c6a2548f0287454cecee61d2931d546cc0d4d7b78d8e0ff53ab34f"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.7.2/kickoutchi-aarch64-apple-darwin.tar.xz"
+      sha256 "9b4343ef7070b4cb7d32558c43ca0cde85633a972d443918ed9dda1c8f672772"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.7.1/kickoutchi-x86_64-apple-darwin.tar.xz"
-      sha256 "e5b9af7308ee8dbb8168c11b1f89999d3b89cb7834b6bced4c066c4fcc7d9349"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.7.2/kickoutchi-x86_64-apple-darwin.tar.xz"
+      sha256 "5b0d423be515021cd46fed206f19873dd8c4fb55d9bb79fdf1d3b98a927142dc"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.7.1/kickoutchi-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e8b228edd0bc1ee14a20da773236f47179a4119a00385254fd6e3ce3e11ba55d"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.7.2/kickoutchi-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e2f67d7641fa02c80a53d0db3f1450b8c1204ac8c5996722b67dd677f7a26bbf"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.7.1/kickoutchi-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b893ab31b8cd20590e76de02bfef1f24b64b98a7483bec3dc1c360d3ea455f66"
+      url "https://github.com/nuggocto/kickoutchi/releases/download/v1.7.2/kickoutchi-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "47020a6ce2a8768d8cfbdea22e6500de351420ccafe642198b18cf72c1f0a5e8"
     end
   end
   license "MIT"
